@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f7f7f5">
+  <title>WorkPilot 2.0</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css?v=wp2">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="logo">W</div>
+      <div><b>WorkPilot</b><span>2.0 Clean</span></div>
+    </div>
+    <button class="nav active" data-view="home">🏠 홈</button>
+    <button class="nav" data-view="tasks">✅ 업무</button>
+    <button class="nav" data-view="schedule">📅 일정</button>
+    <button class="nav" data-view="report">📊 리포트</button>
+    <button class="nav" data-view="settings">⚙ 설정</button>
+  </aside>
+
+  <main class="main">
+    <header class="top">
+      <div>
+        <p class="version">WorkPilot 2.0 · 새 프로젝트</p>
+        <h1 id="title">홈</h1>
+      </div>
+      <button id="hideDone" class="sub">완료 숨기기</button>
+    </header>
+
+    <section class="quick card">
+      <input id="taskInput" placeholder="업무를 입력하세요">
+      <select id="priorityInput">
+        <option value="mid">보통</option>
+        <option value="high">긴급</option>
+        <option value="low">낮음</option>
+      </select>
+      <button id="addTask">업무 추가</button>
+    </section>
+
+    <section class="view active" id="view-home">
+      <div class="grid2">
+        <section class="card assistant">
+          <small>🔥 지금 해야 하는 일</small>
+          <h2 id="recommendTitle">아직 업무가 없습니다</h2>
+          <p id="recommendText">업무 또는 일정을 추가해 시작하세요.</p>
+        </section>
+        <section class="card progressBox">
+          <small>업무 진행률</small>
+          <strong id="rate">0%</strong>
+          <div class="bar"><div id="rateBar"></div></div>
+        </section>
+      </div>
+
+      <section class="stats">
+        <div class="card stat"><span>업무</span><b id="taskTotal">0</b></div>
+        <div class="card stat"><span>오늘 일정</span><b id="todayScheduleTotal">0</b></div>
+        <div class="card stat"><span>완료</span><b id="doneTotal">0</b></div>
+        <div class="card stat"><span>긴급</span><b id="highTotal">0</b></div>
+      </section>
+
+      <section class="card">
+        <div class="head"><b>오늘 일정</b><span id="todayScheduleLabel">0건</span></div>
+        <div id="homeSchedules" class="list"></div>
+      </section>
+
+      <section class="card">
+        <div class="head"><b>오늘 업무</b><span id="todayTaskLabel">0건</span></div>
+        <div id="homeTasks" class="list"></div>
+      </section>
+    </section>
+
+    <section class="view" id="view-tasks">
+      <div class="tools">
+        <input id="search" placeholder="업무 검색">
+        <select id="filter">
+          <option value="all">전체</option>
+          <option value="high">긴급</option>
+          <option value="mid">보통</option>
+          <option value="low">낮음</option>
+        </select>
+      </div>
+      <div id="taskSections"></div>
+    </section>
+
+    <section class="view" id="view-schedule">
+      <section class="card scheduleForm">
+        <input id="scheduleTitle" placeholder="일정명">
+        <input id="scheduleDate" type="date">
+        <input id="scheduleTime" type="time">
+        <input id="scheduleMemo" placeholder="장소/메모">
+        <button id="addSchedule">일정 추가</button>
+      </section>
+      <section class="card">
+        <div class="head"><b>일정 목록</b><span id="scheduleTotal">0건</span></div>
+        <div id="scheduleList" class="list"></div>
+      </section>
+    </section>
+
+    <section class="view" id="view-report">
+      <section class="card report" id="report"></section>
+    </section>
+
+    <section class="view" id="view-settings">
+      <section class="card">
+        <h2>설정</h2>
+        <p>현재 버전: <b>WorkPilot 2.0 Clean</b></p>
+        <button id="exportData">CSV 백업</button>
+        <button id="resetAll" class="danger">전체 초기화</button>
+      </section>
+    </section>
+  </main>
+
+  <aside class="right">
+    <section class="card">
+      <small>📌 고정 업무</small>
+      <div id="pinned" class="sideList"></div>
+    </section>
+    <section class="card">
+      <small>다가오는 일정</small>
+      <div id="upcoming" class="sideList"></div>
+    </section>
+  </aside>
+</div>
+
+<nav class="bottom">
+  <button class="mnav active" data-view="home">홈</button>
+  <button class="mnav" data-view="tasks">업무</button>
+  <button class="mnav" data-view="schedule">일정</button>
+  <button class="mnav" data-view="report">통계</button>
+  <button class="mnav" data-view="settings">설정</button>
+</nav>
+
+<script src="app.js?v=wp2"></script>
+</body>
+</html>
