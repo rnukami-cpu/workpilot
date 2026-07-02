@@ -1,11 +1,7 @@
-# WorkPilot 2.0 Clean
+# WorkPilot 2.1
 
-새 저장소용 클린 버전입니다.
-기존 my-weekly-work 저장소에 섞어 올리지 말고 새 저장소(workpilot 등)에 업로드하는 것을 권장합니다.
-
-파일:
-- index.html
-- style.css
-- app.js
-- manifest.json
-- README.md
+추가:
+- 주간 캘린더 탭
+- 템플릿 탭
+- 월요일 루틴 / 입소 준비 / 시설 점검 템플릿
+- WorkPilot 2.0 데이터 자동 이어받기

@@ -4,20 +4,19 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#f7f7f5">
-  <title>WorkPilot 2.0</title>
+  <title>WorkPilot 2.1</title>
   <link rel="manifest" href="manifest.json">
-  <link rel="stylesheet" href="style.css?v=wp2">
+  <link rel="stylesheet" href="style.css?v=2.1">
 </head>
 <body>
 <div class="app">
   <aside class="sidebar">
-    <div class="brand">
-      <div class="logo">W</div>
-      <div><b>WorkPilot</b><span>2.0 Clean</span></div>
-    </div>
+    <div class="brand"><div class="logo">W</div><div><b>WorkPilot</b><span>2.1</span></div></div>
     <button class="nav active" data-view="home">🏠 홈</button>
     <button class="nav" data-view="tasks">✅ 업무</button>
     <button class="nav" data-view="schedule">📅 일정</button>
+    <button class="nav" data-view="calendar">🗓 주간</button>
+    <button class="nav" data-view="templates">📋 템플릿</button>
     <button class="nav" data-view="report">📊 리포트</button>
     <button class="nav" data-view="settings">⚙ 설정</button>
   </aside>
@@ -25,7 +24,7 @@
   <main class="main">
     <header class="top">
       <div>
-        <p class="version">WorkPilot 2.0 · 새 프로젝트</p>
+        <p class="version">WorkPilot 2.1 · 업무비서</p>
         <h1 id="title">홈</h1>
       </div>
       <button id="hideDone" class="sub">완료 숨기기</button>
@@ -100,6 +99,28 @@
       </section>
     </section>
 
+    <section class="view" id="view-calendar">
+      <section class="card">
+        <div class="head"><b>주간 캘린더</b><span>이번 주 일정</span></div>
+        <div id="weekCalendar" class="weekCalendar"></div>
+      </section>
+    </section>
+
+    <section class="view" id="view-templates">
+      <section class="card">
+        <div class="head"><b>업무 템플릿</b><span>자주 하는 업무 묶음</span></div>
+        <div class="templateGrid">
+          <button class="templateBtn" data-template="monday">월요일 루틴 추가</button>
+          <button class="templateBtn" data-template="checkin">입소 준비 추가</button>
+          <button class="templateBtn" data-template="facility">시설 점검 추가</button>
+        </div>
+      </section>
+      <section class="card">
+        <div class="head"><b>템플릿 설명</b><span>버튼 한 번으로 업무 생성</span></div>
+        <div class="empty">반복적으로 쓰는 업무는 여기서 한 번에 추가할 수 있어.</div>
+      </section>
+    </section>
+
     <section class="view" id="view-report">
       <section class="card report" id="report"></section>
     </section>
@@ -107,7 +128,7 @@
     <section class="view" id="view-settings">
       <section class="card">
         <h2>설정</h2>
-        <p>현재 버전: <b>WorkPilot 2.0 Clean</b></p>
+        <p>현재 버전: <b>WorkPilot 2.1</b></p>
         <button id="exportData">CSV 백업</button>
         <button id="resetAll" class="danger">전체 초기화</button>
       </section>
@@ -130,10 +151,10 @@
   <button class="mnav active" data-view="home">홈</button>
   <button class="mnav" data-view="tasks">업무</button>
   <button class="mnav" data-view="schedule">일정</button>
-  <button class="mnav" data-view="report">통계</button>
+  <button class="mnav" data-view="calendar">주간</button>
   <button class="mnav" data-view="settings">설정</button>
 </nav>
 
-<script src="app.js?v=wp2"></script>
+<script src="app.js?v=2.1"></script>
 </body>
 </html>
